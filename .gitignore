@@ -10,3 +10,11 @@
 *.lai
 *.la
 *.a
+
+# mac related files
+.DS_Store
+platform/mac/Intermediate Build Files
+platform/mac/*.xcodeproj/*.mode1
+platform/mac/*.xcodeproj/*.pbxuser
+platform/mac/*.xcodeproj/*.mode1v3
+platform/mac/build
