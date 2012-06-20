@@ -22,6 +22,12 @@ Server.local.freqscope;
 	}).send(s);
 )
 
+//Play the drones unmodulated
+(
+	~dronesSynth = Synth(\drones, [\out, 0]);
+)
+
+//Play the drones modulated by \fmEnv
 (
 	~bus = Bus.audio(s, ~numChannels);
 	
