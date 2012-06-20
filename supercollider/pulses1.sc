@@ -1,5 +1,7 @@
 Server.local.makeGui;
 Server.internal.makeGui;
+Server.local.scope;
+Server.local.freqscope;
 
 (
 	~numChannels = 2;
@@ -14,7 +16,7 @@ Server.internal.makeGui;
 		var trig, env;
 	
  		trig = SinOsc.kr(SinOsc.kr(1/32, pi*1.5, 8, 9)); //FM
-		env = EnvGen.ar(Env.adsr(0.0001, 0.8, 0, 0.01, 1), trig);
+		env = EnvGen.ar(Env.adsr(0.005, 0.8, 0.01, 0.1, curve:-3), trig);
 
 		Out.ar(0, env*In.ar(source, ~numChannels));
 	}).send(s);
@@ -35,4 +37,3 @@ Server.internal.makeGui;
 
 //FM [1..17] and back every 32 secs
 {SinOsc.kr(1/32, pi*1.5, 8, 9)}.plot(minval:1, maxval:17, duration:32);
-
