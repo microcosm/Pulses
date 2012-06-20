@@ -6,9 +6,28 @@ Server.local.freqscope;
 (
 	~numChannels = 2;
 	
-	//Sound source: simple sin osc for now
-	SynthDef(\drones, { |out|
-		Out.ar(out, SinOsc.ar!~numChannels);
+	//Sound source: bassy FM drone
+	SynthDef(\drones1, { |out|
+		var signal;
+		var modulator;
+
+		modulator = SinOsc.ar(1/16, 0, 40, 120);
+		signal = (LFTri.ar(modulator/2) * 0.2) + (SinOsc.ar(modulator) * 0.2);
+		
+		Out.ar(out, signal!2);
+	}).send(s);
+	
+	//Sound source: bassy FM drone with more character on the triangle
+	SynthDef(\drones2, { |out|
+		var signal, numVoices = 8;
+		var modulator;
+
+		modulator = SinOsc.ar(1/16, 0, 40, 120);
+		signal = (LFTri.ar(modulator/2*{1.rand+2}.dup(numVoices)) * 0.2) + (SinOsc.ar(modulator) * 0.2);
+		signal = Pan2.ar(signal, {1.0.rand2}.dup(numVoices));
+		signal = Mix.new(signal);
+		
+		Out.ar(out, signal/numVoices);
 	}).send(s);
 
 	//Envelope: reveal at FM'd intervals
@@ -24,16 +43,24 @@ Server.local.freqscope;
 
 //Play the drones unmodulated
 (
-	~dronesSynth = Synth(\drones, [\out, 0]);
+	//~drones1Synth = Synth(\drones1, [\out, 0]);
+	~drones2Synth = Synth(\drones2, [\out, 0]);
 )
 
 //Play the drones modulated by \fmEnv
 (
 	~bus = Bus.audio(s, ~numChannels);
 	
-	~dronesSynth = Synth(\drones, [\out, ~bus]);
-	~fmEnvSynth = Synth.after(x, \fmEnv, [\source, ~bus]);
+	//~drones1Synth = Synth(\drones1, [\out, ~bus]);
+	~drones2Synth = Synth(\drones2, [\out, ~bus]);
+	~fmEnvSynth = Synth.after(~dronesSynth, \fmEnv, [\source, ~bus]);
 )
+
+~drones1Synth.free;
+~drones2Synth.free;
+~fmEnvSynth.free;
+
+/* FM plotters for \fmEnv */
 
 //FM [8..16] and back every 16 secs
 {SinOsc.kr(1/16, 0, 4, 12)}.plot(minval:8, maxval:16, duration:8);
