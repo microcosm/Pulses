@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8468E7271598E6B000D60655 /* calculator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8468E7261598E6B000D60655 /* calculator.cpp */; };
 		846A408915826A0D009BBAC9 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 846A408615826A0D009BBAC9 /* main.cpp */; };
 		846A408A15826A0D009BBAC9 /* pulses.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 846A408715826A0D009BBAC9 /* pulses.cpp */; };
 		84DD669F158187B00011A692 /* IpEndpointName.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84DD6660158187B00011A692 /* IpEndpointName.cpp */; };
@@ -77,6 +78,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8468E7261598E6B000D60655 /* calculator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = calculator.cpp; sourceTree = "<group>"; };
+		8468E7281598E6BF00D60655 /* calculator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = calculator.h; sourceTree = "<group>"; };
 		846A408615826A0D009BBAC9 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		846A408715826A0D009BBAC9 /* pulses.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = pulses.cpp; sourceTree = "<group>"; };
 		846A408815826A0D009BBAC9 /* pulses.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pulses.h; sourceTree = "<group>"; };
@@ -174,6 +177,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8468E7251598E69E00D60655 /* sound */ = {
+			isa = PBXGroup;
+			children = (
+				8468E7261598E6B000D60655 /* calculator.cpp */,
+				8468E7281598E6BF00D60655 /* calculator.h */,
+			);
+			name = sound;
+			sourceTree = "<group>";
+		};
 		84DD665A158187B00011A692 /* ofxOsc */ = {
 			isa = PBXGroup;
 			children = (
@@ -388,6 +400,7 @@
 		E4B69E1C0A3A1BDC003C02F2 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				8468E7251598E69E00D60655 /* sound */,
 				846A408615826A0D009BBAC9 /* main.cpp */,
 				846A408715826A0D009BBAC9 /* pulses.cpp */,
 				846A408815826A0D009BBAC9 /* pulses.h */,
@@ -513,6 +526,7 @@
 				84DD66B4158187B00011A692 /* ofxSCSynth.cpp in Sources */,
 				846A408915826A0D009BBAC9 /* main.cpp in Sources */,
 				846A408A15826A0D009BBAC9 /* pulses.cpp in Sources */,
+				8468E7271598E6B000D60655 /* calculator.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
