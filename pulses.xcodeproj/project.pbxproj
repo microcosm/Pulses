@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		846A408915826A0D009BBAC9 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 846A408615826A0D009BBAC9 /* main.cpp */; };
-		846A408A15826A0D009BBAC9 /* testApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 846A408715826A0D009BBAC9 /* testApp.cpp */; };
+		846A408A15826A0D009BBAC9 /* pulses.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 846A408715826A0D009BBAC9 /* pulses.cpp */; };
 		84DD669F158187B00011A692 /* IpEndpointName.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84DD6660158187B00011A692 /* IpEndpointName.cpp */; };
 		84DD66A0158187B00011A692 /* NetworkingUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84DD6665158187B00011A692 /* NetworkingUtils.cpp */; };
 		84DD66A1158187B00011A692 /* UdpSocket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84DD6666158187B00011A692 /* UdpSocket.cpp */; };
@@ -78,8 +78,8 @@
 
 /* Begin PBXFileReference section */
 		846A408615826A0D009BBAC9 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		846A408715826A0D009BBAC9 /* testApp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = testApp.cpp; sourceTree = "<group>"; };
-		846A408815826A0D009BBAC9 /* testApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = testApp.h; sourceTree = "<group>"; };
+		846A408715826A0D009BBAC9 /* pulses.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = pulses.cpp; sourceTree = "<group>"; };
+		846A408815826A0D009BBAC9 /* pulses.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pulses.h; sourceTree = "<group>"; };
 		84DD665B158187B00011A692 /* install.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = install.xml; sourceTree = "<group>"; };
 		84DD6660158187B00011A692 /* IpEndpointName.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IpEndpointName.cpp; sourceTree = "<group>"; };
 		84DD6661158187B00011A692 /* IpEndpointName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IpEndpointName.h; sourceTree = "<group>"; };
@@ -389,8 +389,8 @@
 			isa = PBXGroup;
 			children = (
 				846A408615826A0D009BBAC9 /* main.cpp */,
-				846A408715826A0D009BBAC9 /* testApp.cpp */,
-				846A408815826A0D009BBAC9 /* testApp.h */,
+				846A408715826A0D009BBAC9 /* pulses.cpp */,
+				846A408815826A0D009BBAC9 /* pulses.h */,
 			);
 			path = src;
 			sourceTree = SOURCE_ROOT;
@@ -512,7 +512,7 @@
 				84DD66B3158187B00011A692 /* ofxSCServer.cpp in Sources */,
 				84DD66B4158187B00011A692 /* ofxSCSynth.cpp in Sources */,
 				846A408915826A0D009BBAC9 /* main.cpp in Sources */,
-				846A408A15826A0D009BBAC9 /* testApp.cpp in Sources */,
+				846A408A15826A0D009BBAC9 /* pulses.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
