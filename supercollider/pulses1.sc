@@ -1,8 +1,14 @@
-Server.local.makeGui;
-Server.internal.makeGui;
-Server.local.scope;
-Server.local.freqscope;
+//Boot the server
+(
+	s = Server.local.makeGui;
+	Server.default = s;
+	Server.local.options.device = "Soundflower (16ch)";
+	s.boot;
+	s.scope;
+	s.freqscope;
+)
 
+//Load all SynthDefs
 (
 	~numChannels = 2;
 	
