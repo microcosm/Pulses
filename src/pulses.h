@@ -3,6 +3,7 @@
 
 
 #include "ofMain.h"
+#include "calculator.h"
 
 class Pulses : public ofBaseApp
 {
@@ -21,7 +22,16 @@ class Pulses : public ofBaseApp
 		void mouseReleased(int x, int y, int button);
 		void windowResized(int w, int h);
 	
+        void audioIn(float * input, int bufferSize, int nChannels);
+    
+        vector <float> channel1;
+        vector <float> channel2;
+    
         ofSoundStream soundStream;
+        int bufferCounter;
+        Calculator calculator;
+    
+        float volume;
 };
 
 #endif

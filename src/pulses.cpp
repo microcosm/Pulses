@@ -3,7 +3,17 @@
 void Pulses::setup()
 {
     ofSetDataPathRoot("../../../../data/");
+    bufferCounter = 0;
+}
+
+void Pulses::audioIn(float * input, int bufferSize, int nChannels){	
+	
+    calculator.setBufferSize(bufferSize);
+    calculator.deinterleave(input, channel1, channel2);
+	float nextVolume = calculator.getApproximateVolume(channel1, channel2);
+	volume = calculator.smoothVolume(volume, nextVolume);
     
+	bufferCounter++;
 }
 
 void Pulses::update()
