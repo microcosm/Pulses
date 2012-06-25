@@ -15,6 +15,12 @@ void Pulses::setup()
 	channel2.assign(bufferSize, 0.0);
     
     calculator.setBufferSize(bufferSize);
+    
+    ofSetWindowShape(500, 500);
+	ofSetVerticalSync(true);
+    ofEnableSmoothing();   
+    ofBackground(ofColor::black);
+    ofSetCircleResolution(50);
 }
 
 void Pulses::audioIn(float * input, int bufferSize, int nChannels){	
@@ -33,8 +39,12 @@ void Pulses::update()
 
 void Pulses::draw()
 {
-    float scaledVolume = ofMap(volume, 0.0, 0.17, 0.0, 1.0, true) * 190.0f;
-    ofCircle(200, 200, scaledVolume);
+    ofSetColor(ofColor::red);
+    float scaledVolume = ofMap(volume, 0.0, 0.17, 0.0, 1.0, true) * 290.0f;
+    ofCircle(150, 150, scaledVolume);
+    ofCircle(350, 350, scaledVolume);
+    ofCircle(150, 350, scaledVolume);
+    ofCircle(350, 150, scaledVolume);
 }
 
 void Pulses::keyPressed(int key)
